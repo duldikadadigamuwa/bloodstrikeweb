@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Hub | Collabs & Events</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- JavaScript injects your Red/Gold Navbar here -->
+    <div id="navbar-container"></div>
+
+    <section class="timeline-section">
+      <!-- Page Header -->
+      <div class="page-header" style="text-align: center; margin-bottom: 50px">
+        <h1
+          class="outline-text-left"
+          style="font-size: 6vw; text-align: center">
+          EPIC
+        </h1>
+        <h1
+          class="solid-text-left"
+          style="font-size: 6vw; text-align: center; color: #ffd700">
+          COLLABS
+        </h1>
+      </div>
+
+      <!-- THE VERTICAL TIMELINE -->
+      <div class="timeline">
+        <!-- COLLAB 1 (Image Left, Text Right) -->
+        <div class="timeline-item">
+          <!-- The Center Dot and Date -->
+          <div class="timeline-center">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">DEC 2025</div>
+          </div>
+
+          <div class="timeline-content image-side">
+            <!-- Using your floating animation from the weapons page! -->
+            <img
+              src="assets/aot.jpg"
+              alt="Collab Event"
+              class="collab-img floating-weapon" />
+          </div>
+
+          <div class="timeline-content text-side">
+            <div class="collab-card">
+              <h2 class="collab-title">VENOM BUNDLE</h2>
+              <p class="character-tags">LIMITED EVENT // MYTHIC SKIN</p>
+              <p class="character-desc">
+                Unleash the symbiote. The ultimate Venom crossover event
+                featuring exclusive execution animations, mythic weapon camos,
+                and a brand new Battle Royale game mode.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLLAB 2 (Text Left, Image Right) -->
+        <!-- Note the "reverse" class here! -->
+        <div class="timeline-item reverse">
+          <div class="timeline-center">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">OCT 2025</div>
+          </div>
+
+          <div class="timeline-content image-side">
+            <img
+              src="assets/aot1.jpg"
+              alt="Collab Event"
+              class="collab-img floating-weapon" />
+          </div>
+
+          <div class="timeline-content text-side">
+            <div class="collab-card">
+              <h2 class="collab-title">NEON NIGHTS</h2>
+              <p class="character-tags">BLUEPRINT // TRACERS</p>
+              <p class="character-desc">
+                Light up the battlefield with the Cyberpunk arsenal. Features 3
+                new reactive blueprints that change color as your killstreak
+                increases.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
