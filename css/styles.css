@@ -9,8 +9,16 @@
 }
 
 body {
-    /* Obsidian black gradient background */
-    background: radial-gradient(circle at center, #1a1a1a 0%, #080808 60%, #000000 100%);
+    /* 1. The dark gradient overlay (85% to 95% black) to fade it out */
+    /* 2. The path to your background image */
+    background: 
+        linear-gradient(rgba(10, 10, 10, 0.85), rgba(5, 5, 5, 0.95)),
+        url('../assets/bg bs.jpg'); 
+        
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    background-color: #050505; 
     overflow-x: hidden;
     min-height: 100vh;
 }
@@ -45,12 +53,16 @@ body {
 }
 
 @keyframes navbarFloat {
-    0%,100% { transform: translateX(-50%) translateY(0px); }
-    50% { transform: translateX(-50%) translateY(-10px); }
+    0%, 100% { 
+        transform: translateX(-50%) translateY(0px); 
+    }
+    50% { 
+        transform: translateX(-50%) translateY(-10px); 
+    }
 }
 
 @keyframes ambient {
-    0%,100% {
+    0%, 100% {
         box-shadow:
             0 0 40px rgba(255, 215, 0, 0.15), 
             0 10px 40px rgba(0, 0, 0, 0.8),
@@ -65,102 +77,102 @@ body {
 }
 
 .navbar::before {
-    content:"";
-    position:relative;
-    inset:-2px;
-    border-radius:inherit;
+    content: "";
+    position: relative;
+    inset: -2px;
+    border-radius: inherit;
     background: conic-gradient(from 0deg, #FFD700, transparent, #B8860B, transparent, #FFD700);
-    animation:spin 6s linear infinite;
-    z-index:-2;
+    animation: spin 6s linear infinite;
+    z-index: -2;
     opacity: 0.5;
 }
 
 .liquid {
-    position:absolute;
-    inset:-60px;
+    position: absolute;
+    inset: -60px;
     background: conic-gradient(from 0deg, #FFD700, transparent, #B8860B, transparent, #FFD700);
-    filter:blur(60px);
+    filter: blur(60px);
     opacity: 0.35;
-    animation:spin 10s linear infinite;
+    animation: spin 10s linear infinite;
 }
 
 @keyframes spin {
-    from { transform:rotate(0deg); }
-    to { transform:rotate(360deg); }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .navbar::after {
-    content:"";
-    position:absolute;
-    top:0;
-    left:-150%;
-    width:70%;
-    height:100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 70%;
+    height: 100%;
     background: linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent);
-    transform:skewX(-20deg);
-    animation:shine 6s linear infinite;
+    transform: skewX(-20deg);
+    animation: shine 6s linear infinite;
 }
 
 @keyframes shine {
-    from { left:-150%; }
-    to { left:220%; }
+    from { left: -150%; }
+    to { left: 220%; }
 }
 
 nav {
-    position:relative;
-    z-index:5;
-    display:flex;
-    align-items:center;
-    gap:10px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .indicator {
-    position:absolute;
-    width:110px;
-    height:52px;
-    left:12px;
-    top:50%;
-    transform:translateY(-50%);
-    border-radius:999px;
+    position: absolute;
+    width: 110px;
+    height: 52px;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 999px;
     background: linear-gradient(135deg, rgba(255, 215, 0, 0.4), rgba(184, 134, 11, 0.35));
-    filter:blur(10px);
-    animation:pulseBlob 4s ease-in-out infinite;
-    z-index:-1;
+    filter: blur(10px);
+    animation: pulseBlob 4s ease-in-out infinite;
+    z-index: -1;
 }
 
 @keyframes pulseBlob {
-    0%,100% { transform: translateY(-50%) scale(1); }
+    0%, 100% { transform: translateY(-50%) scale(1); }
     50% { transform: translateY(-50%) scale(1.08); }
 }
 
 .nav-link {
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:10px 24px;
-    text-decoration:none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    text-decoration: none;
     color: #e0e0e0;
-    font-size:15px;
-    font-weight:600;
-    border-radius:999px;
-    overflow:hidden;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 999px;
+    overflow: hidden;
     transition: transform .35s ease, text-shadow .35s ease, box-shadow .35s ease, background .35s ease, color .35s ease;
 }
 
 .nav-link::before {
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius:inherit;
-    background:rgba(255, 215, 0, 0.15);
-    transform:scale(0);
-    transition:.35s ease;
-    z-index:-1;
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(255, 215, 0, 0.15);
+    transform: scale(0);
+    transition: .35s ease;
+    z-index: -1;
 }
 
 .nav-link:hover::before {
-    transform:scale(1);
+    transform: scale(1);
 }
 
 .nav-link:hover {
@@ -171,25 +183,25 @@ nav {
 }
 
 .active {
-    background:rgba(255, 215, 0, 0.1);
+    background: rgba(255, 215, 0, 0.1);
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.3), 0 0 40px rgba(184, 134, 11, 0.2);
     color: #ffffff;
 }
 
 .nav-link::after {
-    content:"";
-    position:absolute;
-    top:0;
-    left:-120%;
-    width:60%;
-    height:100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
     background: linear-gradient(120deg, transparent, rgba(255,255,255,.2), transparent);
-    transform:skewX(-20deg);
-    transition:.6s ease;
+    transform: skewX(-20deg);
+    transition: .6s ease;
 }
 
 .nav-link:hover::after {
-    left:150%;
+    left: 150%;
 }
 
 /* =========================================================
@@ -253,9 +265,8 @@ nav {
 }
 
 /* =========================================================
-   GIANT SHOWCASE CARDS (Characters & Weapons)
+   STANDARD SHOWCASE CARDS (Weapons Base)
 ========================================================= */
-/* Centers the giant card on the screen */
 .showcase-wrapper {
     min-height: 100vh;
     display: flex;
@@ -264,7 +275,6 @@ nav {
     padding: 100px 5% 50px 5%;
 }
 
-/* The Massive Glass Panel */
 .character-showcase-card {
     width: 100%;
     max-width: 1400px;
@@ -342,9 +352,62 @@ nav {
 
 .showcase-img {
     max-height: 70vh; 
-    max-width: 100%; /* ADD THIS: Forces wide weapons to stay completely inside the card! */
+    max-width: 100%; 
     object-fit: contain;
     filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
+}
+
+/* =========================================================
+   UNIVERSAL POP-OUT LAYOUT (Creators, Strikers, etc.)
+========================================================= */
+.popout-card {
+    position: relative;
+    overflow: visible; /* Lets the PNG pop out the top */
+    display: block; /* Turns off side-by-side flexbox to constrain card height */
+}
+
+/* Restricts the text to one side */
+.popout-card .character-text {
+    width: 60%;
+    position: relative;
+    z-index: 10; 
+}
+
+/* The Overlapping Image Container */
+.popout-visual {
+    position: absolute;
+    bottom: 0; 
+    right: 0; 
+    width: 65%; 
+    height: 120%; /* Makes the image pop out the top */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 30px;
+    pointer-events: none; 
+    z-index: 5; 
+}
+
+.popout-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
+}
+
+/* Reverse Pop-out Layout */
+.popout-card.reverse .character-text {
+    margin-left: 40%; 
+    text-align: right;
+    align-items: flex-end;
+}
+
+.popout-card.reverse .popout-visual {
+    right: auto;
+    left: 0; 
+    justify-content: flex-start; /* Keeps it anchored to the left */
+    padding-right: 0; /* Resets the right padding */
+    padding-left: 30px; /* Nudges the image exactly 30px away from the left edge! */
 }
 
 /* =========================================================
@@ -403,6 +466,17 @@ nav {
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
     transition: width 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Arsenal Notice Layout */
+.arsenal-notice-spacing {
+    padding-top: 140px;
+}
+
+.notice-card-layout {
+    justify-content: center !important;
+    text-align: center;
+    padding: 40px 60px !important;
 }
 
 /* =========================================================
@@ -515,150 +589,19 @@ nav {
 
 
 /* =========================================================
-   CREATORS PAGE (Overlapping Layout)
+   SCROLL FADE-IN ANIMATIONS
 ========================================================= */
-.creator-card {
-    position: relative;
-    overflow: visible; /* Lets the PNG pop out the top if it's tall */
-    display: block; /* Turns off the side-by-side flexbox */
+.scroll-hidden {
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
 }
 
-/* Restrict the text to one side */
-.creator-card .character-text {
-    width: 60%;
-    position: relative;
-    z-index: 10; /* Keeps text clickable and on top */
-}
-
-/* The Overlapping Image Container */
-.creator-visual {
-    position: absolute;
-    bottom: 0; /* Pins image to the floor of the card */
-    right: 0; /* Pins image to the right edge */
-    width: 65%; /* Spans across half the card, forcing it to overlap the text */
-    height: 120%; /* Makes the image pop out the top of the glass card slightly */
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    pointer-events: none; /* Allows the mouse to click text underneath the PNG's invisible box */
-    z-index: 5; /* Puts the image behind the text. Change to 15 if you want it IN FRONT of the text */
-}
-
-.creator-img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
-}
-
-/* --- Reverse Layout for the Second Creator --- */
-.creator-card.reverse .character-text {
-    margin-left: 40%; /* Pushes text to the right side */
-    text-align: right;
-    align-items: flex-end;
-}
-
-.creator-card.reverse .creator-visual {
-    right: auto;
-    left: 0; /* Pins image to the left edge instead */
-    justify-content: flex-start;
-}
-
-
-
-
-/*scroll*/
-.scroll-hidden{
-    opacity:0;
-    transform:translateY(80px);
-    filter:blur(10px);
-    transition:
-        opacity .8s ease,
-        transform .8s ease,
-        filter .8s ease;
-}
-
-/* ===========================
-   CHARACTER SCROLL EFFECT
-=========================== */
-
-.showcase-wrapper{
-
-    opacity:.35;
-    filter:blur(12px);
-    transform:scale(.95) translateY(60px);
-
-    transition:
-        opacity .8s ease,
-        filter .8s ease,
-        transform .8s ease;
-
-    will-change:transform,filter,opacity;
-
-}
-
-.showcase-wrapper.active-section{
-
-    opacity:1;
-    filter:blur(0);
-    transform:scale(1) translateY(0);
-
-}
-
-.showcase-wrapper.inactive-section{
-
-    opacity:.35;
-    filter:blur(12px);
-    transform:scale(.95) translateY(60px);
-
-}
-
-/* Image animation */
-
-.showcase-img{
-
-    transition:
-        transform .8s ease,
-        filter .8s ease;
-
-}
-
-.active-section .showcase-img{
-
-    transform:scale(1);
-    filter:blur(0);
-
-}
-
-.inactive-section .showcase-img{
-
-    transform:scale(.92);
-    filter:blur(4px);
-
-}
-
-/* Text animation */
-
-.character-text{
-
-    transition:
-        transform .8s ease,
-        opacity .8s ease;
-
-}
-
-.active-section .character-text{
-
-    opacity:1;
-    transform:translateX(0);
-
-}
-
-.inactive-section .character-text{
-
-    opacity:.4;
-    transform:translateY(20px);
-
+.scroll-show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
 }
 
 /* =========================================================
@@ -715,7 +658,12 @@ nav {
         line-height: 1.4;
     }
 
-    /* Giant Showcase Card Mobile Fixes */
+    /* Arsenal Spacing Fix */
+    .arsenal-notice-spacing {
+        padding-top: 100px;
+    }
+
+    /* Standard Card Mobile Fix */
     .character-showcase-card, .character-showcase-card.reverse {
         flex-direction: column; 
         padding: 40px 20px; 
@@ -723,13 +671,8 @@ nav {
         gap: 30px;
     }
 
-    .character-showcase-card.reverse .character-text {
+    .character-showcase-card.reverse .character-text, .character-text {
         align-items: center; 
-        text-align: center;
-    }
-
-    .character-text {
-        align-items: center;
         text-align: center;
     }
 
@@ -737,8 +680,15 @@ nav {
         font-size: 15vw; 
     }
 
+    .character-visual {
+        width: 100%;
+        justify-content: center;
+    }
+
     .showcase-img {
-        max-height: 45vh; 
+        max-width: 100%; 
+        max-height: 35vh; 
+        object-fit: contain;
     }
 
     .weapon-stats {
@@ -778,25 +728,20 @@ nav {
         margin-top: 30px;
     }
 
-
-
-
-    /* --- Creators Page Mobile Fixes --- */
-    .creator-card {
-        display: flex; /* Turns vertical stacking back on */
+    /* Universal Pop-Out Layout Mobile Fix */
+    .popout-card {
+        display: flex; 
     }
 
-    .creator-card .character-text, 
-    .creator-card.reverse .character-text {
+    .popout-card .character-text, .popout-card.reverse .character-text {
         width: 100%;
         margin-left: 0;
         text-align: center;
         align-items: center;
     }
 
-    .creator-visual, 
-    .creator-card.reverse .creator-visual {
-        position: relative; /* Turns off the overlapping */
+    .popout-visual, .popout-card.reverse .popout-visual {
+        position: relative; 
         width: 100%;
         height: auto;
         right: auto;
@@ -804,7 +749,7 @@ nav {
         justify-content: center;
     }
 
-    .creator-img {
+    .popout-img {
         max-height: 45vh; 
     }
 }
