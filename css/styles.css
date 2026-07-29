@@ -214,6 +214,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .massive-text {
@@ -262,8 +263,21 @@ nav {
     font-size: 1rem;
     letter-spacing: 2px;
     z-index: 10;
+    
+    /* Dedicated Banner Animation */
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(100%); /* Hides it just below the screen edge */
+    animation: bannerReveal 0.8s ease-out 0.6s forwards; /* 0.6s delay creates a nice staggered load! */
 }
 
+@keyframes bannerReveal {
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
 /* =========================================================
    STANDARD SHOWCASE CARDS (Weapons Base)
 ========================================================= */
