@@ -657,6 +657,33 @@ nav {
 
 
 /* =========================================================
+   GLOBAL FOOTER
+========================================================= */
+.global-footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 30px;
+    background: rgba(3, 7, 18, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.global-footer p {
+    margin: 0 auto;
+    font-size: 0.65rem;
+    color: #64748b;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.global-footer .highlight {
+    color: #FFD700;
+    font-weight: 400;
+}
+
+/* =========================================================
    SCROLL FADE-IN ANIMATIONS
 ========================================================= */
 .scroll-hidden {

@@ -91,3 +91,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const hiddenElements = document.querySelectorAll('.scroll-hidden');
     hiddenElements.forEach((el) => scrollAnimObserver.observe(el));
 });
+
+/* =========================================================
+   5. INJECT FOOTER (For subpages only)
+========================================================= */
+const footerHTML = `
+  <footer class="global-footer">
+    <p>&copy; 2026 <span class="highlight">DULAX</span> | Unofficial fan site not affiliated with <a href="https://www.blood-strike.com/" target="_blank" style="color: rgba(255, 215, 0, 0.7); text-decoration: underline;">NetEase Games</a></p>
+  </footer>
+`;
+
+const footerContainer = document.getElementById('footer-container');
+if (footerContainer) {
+    footerContainer.innerHTML = footerHTML;
+}
