@@ -602,6 +602,60 @@ nav {
 }
 
 
+
+
+
+/* =========================================================
+   CREATOR SOCIAL BUTTONS
+========================================================= */
+.creator-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 999px;
+    color: #e0e0e0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* The SVG Icons */
+.social-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.social-btn:hover {
+    background: #FFD700;
+    color: #050505; /* Dark text for contrast against the gold */
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.25);
+    border-color: #FFD700;
+}
+
+.social-btn:hover svg {
+    transform: scale(1.15); /* Icon scales up slightly on hover */
+}
+
+
 /* =========================================================
    SCROLL FADE-IN ANIMATIONS
 ========================================================= */
@@ -779,5 +833,12 @@ nav {
         max-height: 45vh; 
         display: block;
         margin-bottom: -5px; /* Kills the tiny invisible gap browsers automatically add under images */
+    }
+
+
+    /* Centers social buttons on mobile */
+    .creator-socials {
+        justify-content: center;
+        width: 100%;
     }
 }
