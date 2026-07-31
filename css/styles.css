@@ -704,36 +704,41 @@ nav {
 ========================================================= */
 @media (max-width: 768px) {
     
-    body {
-        overflow-y: auto;
+   body {
+        /* Removed overflow-y: auto; because it breaks scroll animations on phones! */
         overflow-x: hidden;
     }
 
+    /* 1. Swipeable Navbar Fix */
     /* 1. Swipeable Navbar Fix */
     .navbar {
         width: 90%;
         padding: 8px 10px;
         top: 10px;
-        overflow-x: auto; 
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch; /* Makes finger-swiping buttery smooth on iOS/Android */
+        overflow-x: auto !important; 
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x; 
+        justify-content: flex-start !important; /* CRITICAL: Stops the left side (Home) from being cut off */
     }
-    
+
     .navbar::-webkit-scrollbar {
-        display: none; /* Hides the ugly scrollbar to keep the glass look */
+        display: none; /* Hides the ugly scrollbar */
     }
 
     nav {
+        display: flex;
+        justify-content: flex-start !important; /* CRITICAL: Stops the buttons from being pinned to the center */
         gap: 0.5rem;
-        width: max-content; /* Forces the nav to be wider than the screen so it can scroll */
-        padding-right: 15px; /* Adds a little breathing room at the very end of the swipe */
+        width: max-content; 
+        padding-right: 15px; 
     }
 
     .nav-link {
         font-size: 0.85rem;
         padding: 8px 14px;
-        white-space: nowrap; /* Stops the text from breaking into two lines */
-        flex-shrink: 0; /* Prevents the buttons from squishing together */
+        white-space: nowrap !important; /* Forces text to stay on one line */
+        flex-shrink: 0 !important; /* Stops buttons from squishing */
     }
 
     /* Hero Fixes */
