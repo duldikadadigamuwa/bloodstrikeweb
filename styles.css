@@ -704,8 +704,8 @@ nav {
 ========================================================= */
 @media (max-width: 768px) {
     
-    body {
-        overflow-y: auto;
+   body {
+        /* Removed overflow-y: auto; because it breaks scroll animations on phones! */
         overflow-x: hidden;
     }
 
@@ -717,9 +717,8 @@ nav {
         overflow-x: auto !important; 
         overflow-y: hidden !important;
         -webkit-overflow-scrolling: touch;
-        touch-action: pan-x; /* CRITICAL: Tells mobile screens to allow left/right swiping */
+        touch-action: pan-x; 
     }
-    
     .navbar::-webkit-scrollbar {
         display: none; /* Hides the ugly scrollbar */
     }
