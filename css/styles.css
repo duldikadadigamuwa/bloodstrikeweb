@@ -748,9 +748,12 @@ nav {
         margin-top: 30px;
     }
 
-    /* Universal Pop-Out Layout Mobile Fix */
-    .popout-card {
+   /* Universal Pop-Out Layout Mobile Fix */
+    .popout-card, .popout-card.reverse {
         display: flex; 
+        flex-direction: column;
+        padding-bottom: 0 !important; /* Removes the bottom padding so the image touches the floor */
+        overflow: hidden; /* Clips the bottom of the image to perfectly match the rounded corners of the glass */
     }
 
     .popout-card .character-text, .popout-card.reverse .character-text {
@@ -758,6 +761,7 @@ nav {
         margin-left: 0;
         text-align: center;
         align-items: center;
+        padding-bottom: 20px; /* Keeps your text from touching the image */
     }
 
     .popout-visual, .popout-card.reverse .popout-visual {
@@ -767,9 +771,13 @@ nav {
         right: auto;
         left: auto;
         justify-content: center;
+        padding-left: 0; /* Resets the 30px side padding we added on desktop */
+        padding-right: 0;
     }
 
     .popout-img {
         max-height: 45vh; 
+        display: block;
+        margin-bottom: -5px; /* Kills the tiny invisible gap browsers automatically add under images */
     }
 }
