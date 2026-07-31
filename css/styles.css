@@ -628,25 +628,31 @@ nav {
         overflow-x: hidden;
     }
 
-    /* Navbar Mobile Fix */
+    /* 1. Swipeable Navbar Fix */
     .navbar {
         width: 90%;
         padding: 8px 10px;
         top: 10px;
         overflow-x: auto; 
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch; /* Makes finger-swiping buttery smooth on iOS/Android */
     }
     
     .navbar::-webkit-scrollbar {
-        display: none; 
+        display: none; /* Hides the ugly scrollbar to keep the glass look */
     }
 
     nav {
         gap: 0.5rem;
+        width: max-content; /* Forces the nav to be wider than the screen so it can scroll */
+        padding-right: 15px; /* Adds a little breathing room at the very end of the swipe */
     }
 
     .nav-link {
-        font-size: 0.8rem;
-        padding: 6px 10px;
+        font-size: 0.85rem;
+        padding: 8px 14px;
+        white-space: nowrap; /* Stops the text from breaking into two lines */
+        flex-shrink: 0; /* Prevents the buttons from squishing together */
     }
 
     /* Hero Fixes */
